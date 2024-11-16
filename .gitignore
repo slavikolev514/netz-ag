@@ -2,4 +2,6 @@
 __pycache__/
 *.py[cod]
 *$py.class
+userdata/
+# WARNING: NEVER COMMIT USER DATA
 # Note: copied from github/gitignore repo
