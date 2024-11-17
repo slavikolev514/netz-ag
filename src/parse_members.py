@@ -10,6 +10,7 @@ import regex
 # add column member/nonmember/exception (optional: color it)
 
 # generate and add pip_reqs.txt via pip list
+# make templates for the input files in a /templates folder
 
 # Stretch goal: get by cmd and pipe switch output to file, then parse
 # Stretch goal: make script to disable inactive member interfaces
@@ -96,6 +97,10 @@ def main():
     # switch_output_dict.update(mymembersdict)
     # switch_output_dict.update(special_members_dict)
 
+    # map combined dict to excel
+    # TODO: CLEAN UP THESE COLUMNS, THEY'RE INCONSISTENT
+    switch_output_df = pandas.DataFrame.from_dict(switch_output_dict, orient='index') #, columns=["room nr", "interface", "member status", "name"])
+    switch_output_df.to_excel("userdata/combined.xlsx")
 
 if __name__ == "__main__":
     main()
