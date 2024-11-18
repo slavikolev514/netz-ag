@@ -32,7 +32,7 @@ def main():
     print("parsing switch output")
     switch_output_dict = {}
 
-    invalid_pattern = regex.compile("Gi[3-5]")
+    invalid_pattern = regex.compile("Gi[3-5]") # TODO: rename, this is the valid pattern
 
     with open("userdata/switch_interfaces_status-20241012.txt", 'r') as f:
         for line in f:
