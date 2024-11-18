@@ -24,7 +24,7 @@ def main():
     print("uhh")
     print("parsing members excel")
 
-    mymembers = pandas.read_excel('userdata/Vereinsmitgliede_Stand_7_10_24.xlsx', usecols="B:C")
+    mymembers = pandas.read_excel('userdata/Vereinsmitgliede_Stand.xlsx', usecols="B:C")
 
     mymembersdict = mymembers.set_index('Room')['Name'].to_dict()
     print("uhh parsed")
@@ -34,7 +34,7 @@ def main():
 
     invalid_pattern = regex.compile("Gi[3-5]") # TODO: rename, this is the valid pattern
 
-    with open("userdata/switch_interfaces_status-20241012.txt", 'r') as f:
+    with open("userdata/switch_interfaces_status.txt", 'r') as f:
         for line in f:
             items = line.split()
             if (len(items) != 7 or not(invalid_pattern.match(items[0]))): # may be redundant
